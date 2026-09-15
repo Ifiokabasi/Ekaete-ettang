@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { useState } from "react";
 
 const leftLinks = [
@@ -14,23 +14,31 @@ const rightLinks = [
   { label: "Ekaete's Work", href: "#videoBlogs" },
 ];
 
-const linkVariants = {
+const linkVariants: Variants = {
   hidden: {
     opacity: 0,
     y: -15,
   },
-  visible: (index) => ({
+  visible: (index: number) => ({
     opacity: 1,
     y: 0,
     transition: {
       duration: 0.6,
       delay: 0.2 + index * 0.1,
-      ease: [0.22, 1, 0.36, 1],
+      ease: [0.22, 1, 0.36, 1] as const,
     },
   }),
 };
 
-function NavLink({ label, href, index }) {
+function NavLink({
+  label,
+  href,
+  index,
+}: {
+  label: string;
+  href: string;
+  index: number;
+}) {
   return (
     <motion.li
       custom={index}
@@ -77,7 +85,7 @@ export default function Navbar() {
           transition={{
             duration: 0.8,
             delay: 0.1,
-            ease: [0.22, 1, 0.36, 1],
+            ease: [0.22, 1, 0.36, 1] as const,
           }}
           className="group absolute left-1/2 top-5 flex -translate-x-1/2 flex-col items-center"
           aria-label="Ekaete Ettang home"
@@ -152,7 +160,7 @@ export default function Navbar() {
         }}
         transition={{
           duration: 0.4,
-          ease: [0.22, 1, 0.36, 1],
+          ease: [0.22, 1, 0.36, 1] as const,
         }}
         className="overflow-hidden md:hidden"
       >

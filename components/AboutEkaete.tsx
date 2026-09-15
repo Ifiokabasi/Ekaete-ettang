@@ -31,7 +31,7 @@ const fadeUp = {
     y: 0,
     transition: {
       duration: 0.8,
-      ease: [0.22, 1, 0.36, 1],
+      ease: [0.22, 1, 0.36, 1] as const,
     },
   },
 };
@@ -158,7 +158,7 @@ export default function AboutEkaete() {
                   whileHover={{ y: -8 }}
                   transition={{
                     duration: 0.5,
-                    ease: [0.22, 1, 0.36, 1],
+                    ease: [0.22, 1, 0.36, 1] as const,
                   }}
                   className="relative aspect-square overflow-hidden rounded-[28px] bg-black/5"
                 >

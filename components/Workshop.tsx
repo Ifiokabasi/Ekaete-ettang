@@ -13,7 +13,7 @@ const fadeUp = {
     y: 0,
     transition: {
       duration: 0.9,
-      ease: [0.22, 1, 0.36, 1],
+      ease: [0.22, 1, 0.36, 1] as const,
     },
   },
 };
@@ -31,7 +31,7 @@ export default function Workshop() {
         viewport={{ once: true }}
         transition={{
           duration: 1.5,
-          ease: [0.22, 1, 0.36, 1],
+          ease: [0.22, 1, 0.36, 1] as const,
         }}
         className="absolute inset-0"
       >

@@ -61,7 +61,7 @@ const item = {
     y: 0,
     transition: {
       duration: 0.65,
-      ease: [0.22, 1, 0.36, 1],
+      ease: [0.22, 1, 0.36, 1] as const,
     },
   },
 };
@@ -84,7 +84,7 @@ export default function VideoBlogs() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] as const }}
           className="mb-16 max-w-3xl"
         >
           <p className="mb-5 text-xs font-semibold uppercase tracking-[0.28em] text-black/50">
@@ -108,7 +108,7 @@ export default function VideoBlogs() {
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as const }}
           className="mb-12 h-px origin-left bg-black/10"
         />
 
