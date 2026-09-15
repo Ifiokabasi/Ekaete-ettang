@@ -28,13 +28,9 @@ export default function AboutEkaete() {
         About Ekaete Ettang
       </h1>
       <p className="max-w-2xl text-center text-brand-ink">
-        Pellentesque habitant morbi tristique senectus et netus et malesuada
-        fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
-        ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
-        egestas semper. Aenean ultricies mi vitae est. Mauris placerat
-        eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-        Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit
-        amet, wisi. Aenean fermentum.
+        Dr. Ekaette Ettang is a Christian educator and leader with a longstanding commitment to advancing Christian education and nurturing young people.
+She has served in leadership within the Association of Christian Schools in Nigeria and has contributed to conversations surrounding Christian education 
+and the development of young people. Her passion for faith, education, and godly values continues to influence the lives of the younger generation.
       </p>
 
       <button className="h-14 w-full max-w-xs rounded-[10px] border-none bg-black text-base uppercase tracking-wide text-white transition-colors hover:bg-brand-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black sm:w-auto sm:px-10">
