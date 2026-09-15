@@ -320,6 +320,29 @@ export default function Contact() {
             </span>
           </p>
         </motion.div>
+
+                        {/* COPYRIGHT */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mt-16 flex flex-col gap-3 border-t border-black/10 pt-6 text-[10px] font-medium uppercase tracking-[0.2em] text-black/35 sm:flex-row sm:items-center sm:justify-between"
+        >
+          <p>© 2026 Cornrow Media Africa</p>
+
+          <p>
+            Designed &amp; developed by{" "}
+            <a
+              href="https://cornrow.africa"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-black/55 transition-colors duration-300 hover:text-black hover:underline hover:underline-offset-4"
+            >
+              Cornrow Media Africa
+            </a>
+          </p>
+        </motion.div>
       </div>
     </section>
   );
