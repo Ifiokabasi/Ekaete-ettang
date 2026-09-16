@@ -329,7 +329,7 @@ export default function Contact() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mt-16 flex flex-col gap-3 border-t border-black/10 pt-6 text-[10px] font-medium uppercase tracking-[0.2em] text-black/35 sm:flex-row sm:items-center sm:justify-between"
         >
-          <p>© 2026 Cornrow Media Africa</p>
+          <p>© 2026 Ekaete Ettang Ministries</p>
 
           <p>
             Designed &amp; developed by{" "}
