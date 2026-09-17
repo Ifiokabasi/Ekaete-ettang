@@ -103,22 +103,29 @@ export default function Workshop() {
             {/* Video */}
             <div className="relative aspect-video overflow-hidden rounded-[22px] bg-black">
               <video
-                controls
+                autoPlay
+                muted
+                loop
                 playsInline
-                preload="metadata"
+                preload="auto"
                 className="h-full w-full object-cover"
+                aria-label="A glimpse inside Ekaete's training"
               >
-                {/* Add your video here */}
-                {/* 
                 <source
-                  src="/videos/workshop.mp4"
+                  src="/videos/ekaete-training.mp4"
                   type="video/mp4"
                 />
-                */}
+
+                Your browser does not support the video tag.
               </video>
 
-              {/* Subtle overlay */}
+              {/* Subtle cinematic overlay */}
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-70 transition-opacity duration-500 group-hover:opacity-30" />
+
+              {/* Sound indicator */}
+              <div className="absolute bottom-4 right-4 rounded-full bg-black/50 px-3 py-2 text-[9px] font-semibold uppercase tracking-[0.18em] text-white backdrop-blur-sm">
+                Sound Off
+              </div>
             </div>
           </div>
 

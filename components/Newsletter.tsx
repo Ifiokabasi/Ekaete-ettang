@@ -1,6 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
+import { useRef, useState } from "react";
 
 const fadeUp = {
   hidden: {
@@ -27,6 +29,17 @@ const stagger = {
 };
 
 export default function Newsletter() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handlePlay = () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    setIsPlaying(true);
+    video.play();
+  };
+
   return (
     <section
       id="newsletter"
@@ -45,10 +58,7 @@ export default function Newsletter() {
         className="relative z-10 flex w-full max-w-6xl flex-col items-center"
       >
         {/* INTRO */}
-        <motion.div
-          variants={fadeUp}
-          className="mb-12 text-center"
-        >
+        <motion.div variants={fadeUp} className="mb-12 text-center">
           <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-black/50">
             Stay Connected
           </p>
@@ -65,20 +75,54 @@ export default function Newsletter() {
           </p>
         </motion.div>
 
-        {/* VIDEO */}
+        {/* VIDEO WITH THUMBNAIL */}
         <motion.div
           variants={fadeUp}
           className="group relative w-full max-w-4xl"
         >
           <div className="relative overflow-hidden rounded-[28px] bg-black p-2 shadow-2xl md:p-3">
-            {/* Video */}
             <div className="relative aspect-video overflow-hidden rounded-[20px] bg-black">
               <video
-                controls
+                ref={videoRef}
+                controls={isPlaying}
                 playsInline
-                preload="metadata"
+                preload="none"
+                poster="/images/Moma.jpg"
                 className="h-full w-full object-cover"
-              />
+                onPlay={() => setIsPlaying(true)}
+                onPause={() => setIsPlaying(false)}
+                onEnded={() => setIsPlaying(false)}
+              >
+                {/* Add your video source here */}
+                {/* 
+                <source
+                  src="/videos/message.mp4"
+                  type="video/mp4"
+                />
+                */}
+              </video>
+
+              {/* Custom play overlay — only shows before the video plays */}
+              {!isPlaying && (
+                <button
+                  type="button"
+                  onClick={handlePlay}
+                  aria-label="Play video"
+                  className="absolute inset-0 z-10 flex items-center justify-center bg-black/20 transition-colors duration-500 hover:bg-black/30"
+                >
+                  {/* Play button */}
+                  <span className="flex h-20 w-20 items-center justify-center rounded-full bg-white/90 text-black shadow-2xl backdrop-blur transition-transform duration-500 group-hover:scale-110 md:h-24 md:w-24">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="ml-1 h-8 w-8 md:h-10 md:w-10"
+                    >
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </span>
+                </button>
+              )}
 
               {/* Overlay */}
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-30" />
@@ -102,9 +146,7 @@ export default function Newsletter() {
             whileTap={{ scale: 0.97 }}
             className="group relative inline-flex items-center gap-5 overflow-hidden rounded-full bg-black px-7 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-white"
           >
-            <span className="relative z-10">
-              Join Ekaete&apos;s Newsletter
-            </span>
+            <span className="relative z-10">Join Ekaete&apos;s Newsletter</span>
 
             <span className="relative z-10 flex h-7 w-7 items-center justify-center rounded-full bg-brand-yellow text-black transition-transform duration-500 group-hover:rotate-45">
               →
