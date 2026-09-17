@@ -4,10 +4,26 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const socials = [
-  { src: "/images/facebook.svg", alt: "Facebook" },
-  { src: "/images/twitter.svg", alt: "Twitter" },
-  { src: "/images/instagram.svg", alt: "Instagram" },
-  { src: "/images/youtube.svg", alt: "YouTube" },
+  {
+    src: "/images/facebook.svg",
+    alt: "Facebook",
+    href: "https://facebook.com/ekaete.ettang",
+  },
+  {
+    src: "/images/twitter.svg",
+    alt: "Twitter",
+    href: "https://twitter.com/ekaeteettang",
+  },
+  {
+    src: "/images/instagram.svg",
+    alt: "Instagram",
+    href: "https://instagram.com/ekaeteettang",
+  },
+  {
+    src: "/images/youtube.svg",
+    alt: "YouTube",
+    href: "https://youtube.com/@SonsandDaughtersMedia",
+  },
 ];
 
 const inputClasses =
@@ -264,7 +280,9 @@ export default function Contact() {
                 {socials.map((social) => (
                   <motion.a
                     key={social.alt}
-                    href="#"
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label={social.alt}
                     whileHover={{ y: -4, scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -321,7 +339,7 @@ export default function Contact() {
           </p>
         </motion.div>
 
-                        {/* COPYRIGHT */}
+        {/* COPYRIGHT */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
